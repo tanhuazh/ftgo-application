@@ -18,3 +18,5 @@ to make order service to work
 Those tables need to be in order database,
 some columns are two long,
 and they have problems when creating table.
+
+### page 140 to continue
