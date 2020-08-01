@@ -4,11 +4,11 @@ DROP table IF EXISTS  snapshots;
 DROP table IF EXISTS cdc_monitoring;
 
 create table events (
-  event_id varchar(1000) PRIMARY KEY,
-  event_type varchar(1000),
+  event_id varchar(256) PRIMARY KEY,
+  event_type varchar(256),
   event_data varchar(1000) NOT NULL,
-  entity_type VARCHAR(1000) NOT NULL,
-  entity_id VARCHAR(1000) NOT NULL,
+  entity_type VARCHAR(256) NOT NULL,
+  entity_id VARCHAR(256) NOT NULL,
   triggering_event VARCHAR(1000),
   metadata VARCHAR(1000),
   published TINYINT DEFAULT 0
@@ -18,8 +18,8 @@ CREATE INDEX events_idx ON events(entity_type, entity_id, event_id);
 CREATE INDEX events_published_idx ON events(published, event_id);
 
 create table entities (
-  entity_type VARCHAR(1000),
-  entity_id VARCHAR(1000),
+  entity_type VARCHAR(256),
+  entity_id VARCHAR(256),
   entity_version VARCHAR(1000) NOT NULL,
   PRIMARY KEY(entity_type, entity_id)
 );
@@ -27,9 +27,9 @@ create table entities (
 CREATE INDEX entities_idx ON events(entity_type, entity_id);
 
 create table snapshots (
-  entity_type VARCHAR(1000),
-  entity_id VARCHAR(1000),
-  entity_version VARCHAR(1000),
+  entity_type VARCHAR(256),
+  entity_id VARCHAR(256),
+  entity_version VARCHAR(256),
   snapshot_type VARCHAR(1000) NOT NULL,
   snapshot_json VARCHAR(1000) NOT NULL,
   triggering_events VARCHAR(1000),
@@ -52,8 +52,8 @@ CREATE TABLE message (
 CREATE INDEX message_published_idx ON message(published, id);
 
 CREATE TABLE received_messages (
-  consumer_id VARCHAR(767),
-  message_id VARCHAR(767),
+  consumer_id VARCHAR(256),
+  message_id VARCHAR(256),
   PRIMARY KEY(consumer_id, message_id),
   creation_time BIGINT
 );
