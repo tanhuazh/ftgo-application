@@ -8,6 +8,11 @@ the states are in **CreateOrderSagaState**
 * Need to start both **ZooKeeper** and **Kafka**
 to make order service to work
 
+### create mysql databases
+
+* ftgo_consumer_service
+* ftgo_order_service
+
 ### OrderController swagger endpoint
 
 * http://localhost:8080/swagger-ui.html
