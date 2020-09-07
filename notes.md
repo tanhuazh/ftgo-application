@@ -19,4 +19,8 @@ Those tables need to be in order database,
 some columns are two long,
 and they have problems when creating table.
 
+### swagger
+
+* http://localhost:8081/swagger-ui.html
+
 ### page 140 to continue
