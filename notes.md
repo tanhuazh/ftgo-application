@@ -16,11 +16,29 @@ to make order service to work
 ### create mysql databases
 
 * ftgo_consumer_service
+* ftgo_restaurant_service
 * ftgo_order_service
+
+### sample requests
+
+* create restaurant
+
+    {
+      "menu": {
+        "menuItems": [
+          {
+            "id": "100",
+            "name": "chicken ball",
+            "price": "12.34"
+          }
+        ]
+      },
+      "name": "my restaurant"
+    }
 
 ### OrderController swagger endpoint
 
-* http://localhost:8080/swagger-ui.html
+* http://localhost:8082/swagger-ui.html
 
 ### need to create some common tables
 
